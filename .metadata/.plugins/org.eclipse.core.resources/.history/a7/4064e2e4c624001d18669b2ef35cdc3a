@@ -1,0 +1,95 @@
+package tareas;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+
+import javax.swing.SwingConstants;
+import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.UIManager;
+
+public class logins extends JFrame {
+
+	private JPanel Login;
+	private JTextField Usuario;
+	private JPasswordField Contraseña;
+	private JButton btnNewButton;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					logins frame = new logins();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public logins() {
+		setType(Type.UTILITY);
+		setFont(new Font("Ames", Font.PLAIN, 13));
+		setTitle("LOGIN");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 463, 370);
+		Login = new JPanel();
+		Login.setBackground(new Color(230, 230, 250));
+		Login.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(Login);
+		Login.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("Usuario:");
+		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1.setBounds(35, 62, 83, 24);
+		Login.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Contraseña:");
+		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(35, 144, 83, 24);
+		Login.add(lblNewLabel_2);
+		
+		Usuario = new JTextField();
+		Usuario.setBounds(35, 87, 139, 20);
+		Login.add(Usuario);
+		Usuario.setColumns(10);
+		
+		Contraseña = new JPasswordField();
+		Contraseña.setBounds(35, 167, 139, 20);
+		Login.add(Contraseña);
+		
+		btnNewButton = new JButton("Ingresar");
+		btnNewButton.setBackground(UIManager.getColor("Button.focus"));
+		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 12));
+		btnNewButton.setBounds(70, 260, 104, 24);
+		Login.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Regresar");
+		btnNewButton_1.setBackground(UIManager.getColor("Button.focus"));
+		btnNewButton_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		btnNewButton_1.setBounds(293, 261, 89, 23);
+		Login.add(btnNewButton_1);
+		
+		JLabel lblNewLabel = new JLabel("Ingresa tus datos");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(10, 11, 424, 24);
+		Login.add(lblNewLabel);
+	}
+}
